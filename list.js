@@ -22,7 +22,7 @@ class List {
 
     renderItems() {
         return `
-        <ul>
+        <ul id = 'app'>
             ${this._items.map(
                 (item) => `
                     <li class="${item.state ? 'crossed' : ''}">${item.content}</li>  
