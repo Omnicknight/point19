@@ -8,8 +8,5 @@ list.addItem(new Item("Third"));
 //     list.toggleItem(1);
 // }, 1000);
 
-const div = document.createElement('div');
-
-document.body.append(div);
-
-console.log(div);
+const first = new Unit('Infantryman', 50, 100);
+first.showUnit();
