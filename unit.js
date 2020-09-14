@@ -3,6 +3,7 @@ class Unit {
         this.type = type;
         this.health = this.maxHealth = health;
         this.distance = this.maxDistance = distance;
+        let a = this.health;
     }
     
     showUnit() {
@@ -10,28 +11,33 @@ class Unit {
         div.className = 'unit';
         let divHealth = document.createElement('div');
         divHealth.className = 'health';
-        divHealth.style.width = (this.health);
+        divHealth.style.width = `${this.health}%`;
         let divStamina = document.createElement('div');
         divStamina.className = 'stamina';
+        divStamina.style.width = `${this.distance}%`;
+        let p = document.createElement('p');
         let divImg = document.createElement('div');
         divImg.className = 'img';
         let img = document.createElement('img');
         img.className = 'img';
         
+        if(this.type === 'Infantryman') {
+            img.src = 'pictures/infantryman.jpg';
+        } else if (this.type === 'Sniper') {
+            img.src = 'pictures/sniper.jpg'
+        } else if (this.type === 'Sapper') {
+            img.src = 'pictures/sapper.jpg'
+        } ;
 
         document.body.append(div);
         div.appendChild(divHealth);
         div.appendChild(divStamina);
+        div.appendChild(p);
+        p.innerHTML = `${this.type}`;
         div.appendChild(divImg);
         divImg.appendChild(img);
         
-            if(this.type === 'Infantryman') {
-                img.src = '\pictures\infantryman.jpg';
-            } else if (this.type === 'Sniper') {
-                img.src = 'pictures\sniper.jpg'
-            } else if (this.type === 'Sapper') {
-                img.src = 'pictures\sapper.jpg'
-            } ;
+
         
 
     }
