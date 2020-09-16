@@ -31,4 +31,8 @@ class Squad {
     clone() {
         return this._squad.map((unit) => unit.clone());
     }
+
+    showSquad() {
+       return this._squad.forEach((unit) => unit.showUnit());
+    }
 }
