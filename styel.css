@@ -1,7 +1,3 @@
-.crossed {
-    text-decoration: line-through;
-}
-
 .unit {
     display: inline-flex;
     background-color: yellow;

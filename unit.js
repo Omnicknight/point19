@@ -4,6 +4,7 @@ class Unit {
         this.health = this.maxHealth = health;
         this.distance = this.maxDistance = distance;
         let a = this.health;
+
     }
     
     showUnit() {
@@ -20,14 +21,13 @@ class Unit {
         divImg.className = 'img';
         let img = document.createElement('img');
         img.className = 'img';
+        const pictures = {
+            Infantryman:  'pictures/infantryman.jpg',
+            Sniper: 'pictures/sniper.jpg',
+            Sapper: 'pictures/sapper.jpg',
+        }
+        img.src = `${pictures[this.type]}`;
         
-        if(this.type === 'Infantryman') {
-            img.src = 'pictures/infantryman.jpg';
-        } else if (this.type === 'Sniper') {
-            img.src = 'pictures/sniper.jpg'
-        } else if (this.type === 'Sapper') {
-            img.src = 'pictures/sapper.jpg'
-        } ;
 
         document.body.append(div);
         div.appendChild(divHealth);
@@ -58,4 +58,6 @@ class Unit {
     clone() {
         return new Unit(this.type, this.maxHealth, this.maxDistance);
     }
-}
+};
+
+
